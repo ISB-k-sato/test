@@ -21,7 +21,7 @@ fatal: unable to auto-detect email address (got 'Kenkichi@Kenkichi-PC.(none)')
 ==END================================================
 ★git configでemailとnameの登録が必要っぽい。何を登録すればいいんだろう？？？
 ★よくわからないがgithubのアカウントのメールアドレスを設定してみる。
-git config --local user.email "kenkichi48@r7.ucom.ne.jp"
+git config --local user.email "xxxx"
 git config --local user.name "kaneyoshi0001"
 
 git branch -M main  ★現在のブランチ名(defaltはmaster)をmainに変更。変更する意味が特にないので実行しない。
