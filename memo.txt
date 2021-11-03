@@ -1,0 +1,50 @@
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit
+★失敗する。ふざけんな！
+==START================================================
+$ git commit -m "first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Kenkichi@Kenkichi-PC.(none)')
+==END================================================
+★git configでemailとnameの登録が必要っぽい。何を登録すればいいんだろう？？？
+★よくわからないがgithubのアカウントのメールアドレスを設定してみる。
+git config --local user.email "kenkichi48@r7.ucom.ne.jp"
+git config --local user.name "kaneyoshi0001"
+
+git branch -M main  ★現在のブランチ名(defaltはmaster)をmainに変更。変更する意味が特にないので実行しない。
+
+★ローカルリポジトリをリモートリポジトリと関連付る
+git remote add origin https://github.com/kaneyoshi0001/test.git
+
+git push -u origin main
+git push -u origin master
+
+==================================================
+git develop, feature branch作成からmergeするまで
+https://qiita.com/Naoki206/items/e5520453f92dcd4274f1
+$ git branch #現在の位置がmasterブランチか確認
+$ git branch develop #develop作成
+$ git checkout develop #developへの移動
+$ git push origin develop #remoteに反映
+
+$ git branch #現在の位置がdevelopブランチか確認
+$ git branch feature/STK-0001 #feature作成
+$ git checkout feature/STK-0001 #移動
+
+#改修後
+$ git add . # サブディレクトリも含めたファイルをインデックス領域へアップ
+$ git commit -m "message" # ローカルリポジトリへコミット
+$ git push origin feature/STK-0001 # feature/(任意の名称)ブランチの内容をoriginへアップロード
